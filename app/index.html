@@ -1,11 +1,13 @@
+
+<!--ng-app dyrektywa mowi do AngularJS ze to jest root element dla aplikacji AngularJS. Kazda apka AngularJS musi miec root element.-->
 <!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
 </head>
-<body ng-app="app">
-    <h1>Test Basi</h1>
-    <h2>{{23 + 46}}</h2>
+<body class="container" ng-app="app">
+    <ui-view></ui-view>
     <script type="text/javascript" src="bundle.js"></script>
 </body>
+
