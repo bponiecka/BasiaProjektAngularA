@@ -1,3 +1,5 @@
+/*global Firebase*/
+
 export default class toDoService
 {
     constructor($firebaseObject)
@@ -10,8 +12,8 @@ export default class toDoService
            'completed':'false'
         });
         this.elementref = this.ref.push({
-           'user': 'testuser2',
-           'title':'testtitle2',
+           'user': 'pierwszy anon',
+           'title':'drugi anon',
            'completed':'false'
         }); 
     }
