@@ -1,34 +1,32 @@
-/*global Firebase*/
-
-export default class toDoService
-{
-    constructor($firebaseObject)
+/*global Firebase */
+export default class toDoService {
+    constructor($firebaseArray)
     {
-        this.firebaseObject = $firebaseObject;
+        this.firebaseArray = $firebaseArray;
         this.ref = new Firebase("https://raz.firebaseio.com/");
-        this.ref.push({
-           'user': 'pierwszy anon',
-           'title':'drugi anon',
-           'completed':'false'
-        });
-        this.elementref = this.ref.push({
-           'user': 'pierwszy anon',
-           'title':'drugi anon',
-           'completed':'false'
-        }); 
+        this.items = $firebaseArray(this.ref); 
     }
     
-    getAll()
-    {
-        return this.firebaseObject(this.ref);
+    getAll(){
+        return this.items;
     }
     
-    add(value)
-    {
-        this.ref.push({
+    add(value){
+        console.log(value);
+        this.items.$add({
            'user': value.user,
            'title': value.title,
            'completed': value.completed
         }); 
+    }
+    
+    edit(value){
+        console.log("editsave");
+        this.items.$save(value);
+        console.log("saved");
+    }
+    
+    remove(ref){
+        this.items.$remove(ref);
     }
 };

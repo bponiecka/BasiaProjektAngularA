@@ -4,6 +4,6 @@ export default function routes($stateProvider) {
       url: '/:user',
       template: require('./home.html'),
       controller: 'TabController',
-      controllerAs: 'tabController'
+      controllerAs: 'TabController'
     })
 }

@@ -1,15 +1,16 @@
 <div>
     <user-input></user-input>
     
-    <div>
-        <div ng-show="tabController.user">
-        <div class="list-group">
-            <a href="" class="list-group-item" ng-click="tabController.onUser()"> {{tabController.user}} To Do</a>
-            <a href="" class="list-group-item" ng-click="tabController.onAll()"> All</a>
+    <div style="background-color:#b366ff">
+        <div ng-show="TabController.user">
+        <div class="list-group col-md-6">
+            <a href="" class="list-group-item" ng-click="TabController.onUser()"> Show results</a>
+            <a href="" class="list-group-item" ng-click="TabController.onChangeTab('user')"> {{TabController.user}}'s To Dos <span class="label label-warning">{{TabController.userIncompleted}}</span> <span class="label label-success">{{TabController.userCompleted}}</span></a>
+            <a href="" class="list-group-item" ng-click="TabController.onChangeTab('all')"> All To Dos <span class="label label-warning">{{(TabController.toDos | filter : { completed: false }).length}}</span> <span class="label label-success">{{(TabController.toDos | filter : { completed: true }).length}}</span></a>
         </div>
     </div>
         
-            <div ng-switch='tabController.selectedTab'>
+            <div ng-switch='TabController.selectedTab'>
                 <div ng-switch-when='user'>
                     <user-to-do></user-to-do>
                 </div>
@@ -18,6 +19,9 @@
                 </div>
             </div>
         </div>
-    
+        <!--
+        <li ng-repeat="item in TabController.data" class="list-group col-md-12">
+            <span class="list-group-item">{{item.user}}</span>
+        </li>
+        -->
 </div>
-    

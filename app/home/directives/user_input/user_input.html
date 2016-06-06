@@ -1,18 +1,18 @@
-<div class="col-md-12 well text-center">
+<div style="background-color:#b366ff" class="col-md-10 well text-left">
     <div class="input-group input-group-lg">
       <input 
-        ng-model="tabController.selectedUser" 
+        ng-model="TabController.selectedUser" 
         type="text" 
-        class="form-control text-center" 
-        placeholder="Login"
+        class="form-control text-left" 
+        placeholder="User"
       />
         
-      <span class="input-group-btn">
+      <span class="input-group-btn btn-lg">
         <button 
-          class="btn btn-info" 
+          class="btn btn-color:#66ff8c" 
           type="button" 
-          ui-sref="home({user: tabController.selectedUser})">Search!</button>
+          ui-sref="home({user: TabController.selectedUser})">Let's go</button>
       </span>
+     
     </div>
-    
 </div>
