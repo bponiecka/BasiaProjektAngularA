@@ -29,16 +29,8 @@ export default class TabController{
              completed:false
             
          });
-         /*
-        this.toDos.push({
-            value:{
-                user:this.user,
-                title:this.userText,
-                completed:false
-            },
-            editing:false
-        });
-        */
+        
+
     }
     
     onChangeStatus(status){

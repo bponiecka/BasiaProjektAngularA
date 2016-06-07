@@ -1,4 +1,4 @@
-<section class="row">
+<section class="col-md-4">
     <header>
         <form id="toDo-form" ng-submit="TabController.addToDo()">
             <input id="new-toDo" class="form-control text-center input-lg" placeholder="Add to-do position" ng-model="TabController.userText" ng-disable="saving" />
@@ -21,21 +21,21 @@
                 <input ng-show="todo == TabController.editToDo" ng-model="todo.title" ng-blur="TabController.stopEdit1(todo)" autofocus />
                 </form>
                 <span>{{toDo.user}} </span>
-                <button type="button" class="btn btn-danger" ng-show="todo.user == TabController.user" ng-click="TabController.removeToDo(todo)">Delete it!</button>
+                <button type="button" class="btn btn-warning" ng-show="todo.user == TabController.user" ng-click="TabController.removeToDo(todo)">remove task</button>
                 </div>
             </div>
         
     </section>
 </section>
 <footer>
-            <button type="button" class="btn btn-info" id="toggle-all" ng-model="allMarked" ng-click="TabController.markAll()">Check all</button>
+            <button type="button" class="btn btn-warning" id="toggle-all" ng-model="allMarked" ng-click="TabController.markAll()">Check all</button>
     
-     	    <button type="button" class="btn btn-info" ng-click="TabController.onChangeStatus('')">All</button>
+     	    <button type="button" class="btn btn-warning" ng-click="TabController.onChangeStatus('')">Wszystkie</button>
    
-     	    <button type="button" class="btn btn-warning" ng-click="TabController.onChangeStatus('active')">Active</button>
+     	    <button type="button" class="btn btn-warning" ng-click="TabController.onChangeStatus('active')">Aktywne</button>
 
-     	    <button type="button" class="btn btn-success" ng-click="TabController.onChangeStatus('completed')">Completed</button>
+     	    <button type="button" class="btn btn-warning" ng-click="TabController.onChangeStatus('completed')">Zrealizowane</button>
 
-     	    <button type="button" class="btn btn-default" ng-click="TabController.clearAllCompleted()">Clear Completed</button>
+     	    <button type="button" class="btn btn-warning" ng-click="TabController.clearAllCompleted()">Wyczyść zrealizowane</button>
 
  </footer>
